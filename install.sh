@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install cursor-agent-toolkit into a project (macOS, Linux, Git Bash on Windows).
+# Install cursor-dotfiles into a project (macOS, Linux, Git Bash on Windows).
 # Usage:
 #   ./install.sh                    # current directory
 #   ./install.sh /path/to/project
@@ -42,7 +42,7 @@ RULES_SRC="${SCRIPT_DIR}/rules"
 DEST_SKILLS="${DEST}/.cursor/skills"
 DEST_RULES="${DEST}/.cursor/rules"
 
-echo "Installing cursor-agent-toolkit into: ${DEST}"
+echo "Installing cursor-dotfiles into: ${DEST}"
 
 mkdir -p "${DEST_SKILLS}"
 mkdir -p "${DEST_RULES}"

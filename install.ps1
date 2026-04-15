@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Installs cursor-agent-toolkit skills (and optional rules) into a project's .cursor folder.
+  Installs cursor-dotfiles skills (and optional rules) into a project's .cursor folder.
 
 .EXAMPLE
   .\install.ps1
@@ -24,7 +24,7 @@ $resolved = (Resolve-Path -LiteralPath $ProjectPath).Path
 $destSkills = Join-Path $resolved ".cursor\skills"
 $destRules = Join-Path $resolved ".cursor\rules"
 
-Write-Host "Installing cursor-agent-toolkit into: $resolved"
+Write-Host "Installing cursor-dotfiles into: $resolved"
 
 New-Item -ItemType Directory -Force -Path $destSkills | Out-Null
 New-Item -ItemType Directory -Force -Path $destRules | Out-Null
