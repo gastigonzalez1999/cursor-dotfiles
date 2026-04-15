@@ -13,6 +13,7 @@ Cursor discovers skills in **this project’s** `.cursor/skills/` (each skill is
 |-----------|----------------|
 | Debugging, flaky tests, unclear root cause | `systematic-debug` |
 | Unfamiliar area: map entry points and callers before editing | `pre-edit-context` |
+| “How does X work?” — explain subsystem/flow; optional architecture critique | `how` |
 | After non-trivial edits: run narrow tests or lint | `verify-after-change` |
 | Refactor without behavior change | `safe-refactor` |
 | PR / diff review before merge | `code-review-pass` |
