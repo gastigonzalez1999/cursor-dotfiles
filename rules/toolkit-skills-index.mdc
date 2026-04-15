@@ -1,0 +1,26 @@
+---
+description: When to read bundled toolkit skills under .cursor/skills/<slug>/SKILL.md
+alwaysApply: true
+---
+
+# Toolkit skills index
+
+Cursor discovers skills in **this project’s** `.cursor/skills/` (each skill is a folder with `SKILL.md`). When a task matches a row below, **read that skill once** and apply it. You do not need to quote paths in the reply.
+
+| Use when… | Skill folder |
+|-----------|----------------|
+| Debugging, flaky tests, unclear root cause | `systematic-debug` |
+| Refactor without behavior change | `safe-refactor` |
+| PR / diff review before merge | `code-review-pass` |
+| Package or runtime upgrades | `dependency-update` |
+| Saving state for another session or person | `session-handoff` |
+| HTTP/JSON API shape, errors, versioning | `api-design-basics` |
+
+## Extra skills (optional)
+
+- **skills.sh:** from the project root, `npx skills add <owner/repo>` can add more skills into `.cursor/skills/`. See [skills.sh](https://skills.sh).
+- **User-wide copies:** if the user keeps larger skill libraries under `~/.cursor/skills/`, `~/.claude/skills/`, or `%USERPROFILE%\.cursor\skills\` on Windows, prefer **project** `.cursor/skills/` when both exist; otherwise read the home copy when the task matches and the user allows.
+
+## If a skill is missing
+
+If the workspace cannot read home-directory paths, ask the user to copy the needed `SKILL.md` into `.cursor/skills/<name>/` in this repo.
