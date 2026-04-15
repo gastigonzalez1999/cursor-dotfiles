@@ -6,7 +6,7 @@ Portable **Cursor rules** and **skills** you can copy into any repo. Works on **
 
 ## What you get
 
-- **Six skills** under `.cursor/skills/<slug>/SKILL.md`: systematic debugging, safe refactor, code review pass, dependency updates, session handoff, API design basics.
+- **Skills** under `.cursor/skills/<slug>/SKILL.md`: core engineering (debug, refactor, review, deps, handoff, APIs, grill-me, PRD, TDD, architecture audit), architecture (DDD, clean architecture, SOLID), workflow & performance (phased delivery, performance analysis), and stacks (Prisma, MongoDB, Docker, NestJS, Node.js, TypeScript, Go, Python). See `rules/toolkit-skills-index.mdc` for the full map.
 - **Five rules** under `.cursor/rules/toolkit-*.mdc`: execution, change discipline, communication, conversation context, and a **skills index** so the agent knows when to read each skill.
 
 Rules use the `toolkit-` prefix so they do not silently overwrite unrelated files. Skills merge by folder name; existing skill folders are **skipped** unless you force.

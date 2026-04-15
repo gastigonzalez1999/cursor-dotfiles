@@ -7,6 +7,8 @@ alwaysApply: true
 
 Cursor discovers skills in **this project’s** `.cursor/skills/` (each skill is a folder with `SKILL.md`). When a task matches a row below, **read that skill once** and apply it. You do not need to quote paths in the reply.
 
+## Core engineering
+
 | Use when… | Skill folder |
 |-----------|----------------|
 | Debugging, flaky tests, unclear root cause | `systematic-debug` |
@@ -15,6 +17,38 @@ Cursor discovers skills in **this project’s** `.cursor/skills/` (each skill is
 | Package or runtime upgrades | `dependency-update` |
 | Saving state for another session or person | `session-handoff` |
 | HTTP/JSON API shape, errors, versioning | `api-design-basics` |
+| Quiz / interview prep on this codebase | `grill-me` |
+| Product requirements document | `write-a-prd` |
+| Red–green–refactor workflow | `tdd` |
+| Architectural improvement opportunities | `improve-codebase-architecture` |
+
+## Architecture & design
+
+| Use when… | Skill folder |
+|-----------|----------------|
+| Bounded contexts, aggregates, ubiquitous language | `apply-ddd` |
+| Ports/adapters, use cases, framework isolation | `clean-architecture` |
+| OO module review (SRP, DIP, etc.) | `solid-principles` |
+
+## Workflow & performance
+
+| Use when… | Skill folder |
+|-----------|----------------|
+| Milestones, phases, checkpoints, vertical slices | `gsd-workflow` |
+| Latency, throughput, profiling, SLOs | `performance-analysis` |
+
+## Stacks (common)
+
+| Use when… | Skill folder |
+|-----------|----------------|
+| Prisma schema, migrations, queries | `prisma` |
+| Documents, indexes, aggregation | `mongodb` |
+| Dockerfiles, Compose, images | `docker` |
+| NestJS modules, DI, guards, testing | `nestjs` |
+| Node servers, async, packages | `nodejs` |
+| Types, strictness, generics, libs | `typescript` |
+| Go modules, concurrency, errors | `golang` |
+| Packaging, typing, pytest, perf | `python` |
 
 ## Extra skills (optional)
 
