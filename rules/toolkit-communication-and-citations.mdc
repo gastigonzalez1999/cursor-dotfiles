@@ -12,6 +12,7 @@ alwaysApply: true
 ## Do
 
 - Use fenced code citations with line ranges and paths when pointing at repo code.
+- Use ordinary fenced blocks for new or proposed snippets meant for copy-paste.
 - Put the opening fence alone on its own line; keep cited blocks focused (ellipsis for skips).
 - Match explanation depth to task complexity; prefer precise, readable prose.
 - Honor explicit format constraints (bullets, line limits, filenames) when the user sets them.
