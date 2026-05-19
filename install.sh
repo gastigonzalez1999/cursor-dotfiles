@@ -62,7 +62,9 @@ for src in "${SKILLS_SRC}"/*/; do
   if [[ "${FORCE}" -eq 1 ]] && [[ -d "$dest" ]]; then
     rm -rf "${dest}"
   fi
-  cp -R "${src}" "${DEST_SKILLS}/"
+  # IMPORTANT (BSD/macOS cp): trailing slash on the source merges *contents*
+  # into the destination folder, silently flattening all skills. Avoid "$src/"
+  cp -R "${SKILLS_SRC}/${name}" "${DEST_SKILLS}/"
   echo "  [ok]   skill: ${name}"
   installed=$((installed + 1))
 done

@@ -55,6 +55,8 @@ cd D:\path\to\your-project
 
 Re-run the installer with `--force` / `-Force` after pulling a newer toolkit version.
 
+**macOS:** If `.cursor/skills` ever looked flattened (many `SKILL.md` fragments at the top level), you hit a BSD `cp` trailing-slash quirk fixed in installer **v1.3.1** — wipe that folder or run `--force` again after upgrading the clone.
+
 ## Version
 
 See `VERSION`.
