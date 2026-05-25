@@ -12,7 +12,8 @@
 param(
   [string] $ProjectPath = ".",
   [switch] $SkipRules,
-  [switch] $Force
+  [switch] $Force,
+  [switch] $Global
 )
 
 $ErrorActionPreference = "Stop"
@@ -20,11 +21,16 @@ $ToolkitRoot = $PSScriptRoot
 $SkillsSrc = Join-Path $ToolkitRoot "skills"
 $RulesSrc = Join-Path $ToolkitRoot "rules"
 
-$resolved = (Resolve-Path -LiteralPath $ProjectPath).Path
-$destSkills = Join-Path $resolved ".cursor\skills"
-$destRules = Join-Path $resolved ".cursor\rules"
-
-Write-Host "Installing cursor-dotfiles into: $resolved"
+if ($Global) {
+  $destSkills = Join-Path $env:USERPROFILE ".cursor\skills"
+  $destRules = Join-Path $env:USERPROFILE ".cursor\rules"
+  Write-Host "Installing cursor-dotfiles globally into: $destSkills"
+} else {
+  $resolved = (Resolve-Path -LiteralPath $ProjectPath).Path
+  $destSkills = Join-Path $resolved ".cursor\skills"
+  $destRules = Join-Path $resolved ".cursor\rules"
+  Write-Host "Installing cursor-dotfiles into: $resolved"
+}
 
 New-Item -ItemType Directory -Force -Path $destSkills | Out-Null
 New-Item -ItemType Directory -Force -Path $destRules | Out-Null

@@ -11,14 +11,17 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKIP_RULES=0
 FORCE=0
+GLOBAL=0
 TARGET="."
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --skip-rules) SKIP_RULES=1; shift ;;
     --force) FORCE=1; shift ;;
+    --global) GLOBAL=1; shift ;;
     -h|--help)
-      echo "Usage: $0 [--skip-rules] [--force] [project-path]"
+      echo "Usage: $0 [--global] [--skip-rules] [--force] [project-path]"
+      echo "  --global   Install to ~/.cursor/skills and ~/.cursor/rules (all projects)"
       exit 0
       ;;
     *)
@@ -36,13 +39,19 @@ resolve_target() {
   fi
 }
 
-DEST="$(resolve_target)"
+if [[ "${GLOBAL}" -eq 1 ]]; then
+  DEST_SKILLS="${HOME}/.cursor/skills"
+  DEST_RULES="${HOME}/.cursor/rules"
+  echo "Installing cursor-dotfiles globally into: ${DEST_SKILLS}"
+else
+  DEST="$(resolve_target)"
+  DEST_SKILLS="${DEST}/.cursor/skills"
+  DEST_RULES="${DEST}/.cursor/rules"
+  echo "Installing cursor-dotfiles into: ${DEST}"
+fi
+
 SKILLS_SRC="${SCRIPT_DIR}/skills"
 RULES_SRC="${SCRIPT_DIR}/rules"
-DEST_SKILLS="${DEST}/.cursor/skills"
-DEST_RULES="${DEST}/.cursor/rules"
-
-echo "Installing cursor-dotfiles into: ${DEST}"
 
 mkdir -p "${DEST_SKILLS}"
 mkdir -p "${DEST_RULES}"
