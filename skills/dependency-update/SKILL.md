@@ -1,3 +1,10 @@
+---
+name: dependency-update
+description: >-
+  Bump packages, frameworks, or runtime versions safely — read changelogs, stage majors separately, verify after each step. Use when updating dependencies or resolving a version conflict.
+targets: [cursor]
+---
+
 # Dependency update
 
 ## When to use

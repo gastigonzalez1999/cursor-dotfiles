@@ -1,3 +1,10 @@
+---
+name: python
+description: >-
+  Application or library work in Python — packaging, typing, async, and tooling. Use when writing or reviewing Python code.
+targets: [cursor]
+---
+
 # Python
 
 ## When to use

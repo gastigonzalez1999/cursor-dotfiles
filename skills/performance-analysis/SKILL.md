@@ -1,3 +1,10 @@
+---
+name: performance-analysis
+description: >-
+  Investigate latency, throughput, CPU, memory, or cost regressions. Use when something is slow and you need to find out why before optimizing.
+targets: [cursor]
+---
+
 # Performance analysis
 
 ## When to use

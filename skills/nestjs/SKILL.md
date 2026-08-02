@@ -1,3 +1,10 @@
+---
+name: nestjs
+description: >-
+  Build or refactor NestJS modules, controllers, providers, guards, and interceptors. Use when working in a NestJS codebase.
+targets: [cursor]
+---
+
 # NestJS
 
 ## When to use

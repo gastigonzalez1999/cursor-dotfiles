@@ -1,3 +1,10 @@
+---
+name: mongodb
+description: >-
+  Design documents, indexes, and aggregation pipelines in MongoDB. Use when modeling collections, writing aggregations, or fixing slow Mongo queries.
+targets: [cursor]
+---
+
 # MongoDB
 
 ## When to use

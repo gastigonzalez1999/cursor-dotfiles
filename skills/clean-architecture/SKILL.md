@@ -1,3 +1,10 @@
+---
+name: clean-architecture
+description: >-
+  Structure an application so business rules stay independent of frameworks, databases, and delivery mechanisms. Use when deciding layer boundaries or untangling framework code from domain logic.
+targets: [cursor]
+---
+
 # Clean architecture
 
 ## When to use

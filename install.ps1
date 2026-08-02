@@ -64,4 +64,23 @@ if ($SkipRules) {
   }
 }
 
+# Slash commands are user-global only — Cursor reads them from ~/.cursor/commands
+# regardless of which project is open, so a per-project install has nowhere to go.
+$commandsSrc = Join-Path $PSScriptRoot "commands"
+if ($Global -and (Test-Path -LiteralPath $commandsSrc)) {
+  $destCommands = Join-Path $env:USERPROFILE ".cursor\commands"
+  if (-not (Test-Path -LiteralPath $destCommands)) {
+    New-Item -ItemType Directory -Force -Path $destCommands | Out-Null
+  }
+  Get-ChildItem -LiteralPath $commandsSrc -Filter "*.md" -File | ForEach-Object {
+    $dest = Join-Path $destCommands $_.Name
+    if ((Test-Path -LiteralPath $dest) -and -not $Force) {
+      Write-Host "  [skip] command: $($_.Name) (exists, use -Force to replace)"
+      return
+    }
+    Copy-Item -LiteralPath $_.FullName -Destination $dest -Force
+    Write-Host "  [ok]   command: $($_.Name)"
+  }
+}
+
 Write-Host "Done. Skills: $destSkills | Rules: $destRules"

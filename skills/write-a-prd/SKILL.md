@@ -1,3 +1,10 @@
+---
+name: write-a-prd
+description: >-
+  Turn an idea into a product requirements document stakeholders can align on. Use when scoping a feature before implementation begins.
+targets: [cursor]
+---
+
 # Write a PRD
 
 ## When to use

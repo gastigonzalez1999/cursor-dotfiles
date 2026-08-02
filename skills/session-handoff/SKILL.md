@@ -1,3 +1,10 @@
+---
+name: session-handoff
+description: >-
+  Write a handoff document so another person or agent can pick up the work. Use when ending a long session, switching machines, or handing off.
+targets: [cursor]
+---
+
 # Session handoff
 
 ## When to use

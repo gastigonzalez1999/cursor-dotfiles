@@ -1,3 +1,10 @@
+---
+name: apply-ddd
+description: >-
+  Model complex domains with domain-driven design — bounded contexts, aggregates, ubiquitous language, consistency rules. Use when the domain is nontrivial and the terminology keeps slipping.
+targets: [cursor]
+---
+
 # Apply DDD (domain-driven design)
 
 ## When to use

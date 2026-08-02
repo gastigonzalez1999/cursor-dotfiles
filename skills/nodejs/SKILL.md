@@ -1,3 +1,10 @@
+---
+name: nodejs
+description: >-
+  Server-side JavaScript/TypeScript on Node — HTTP APIs, workers, CLIs, background jobs, async patterns. Use when building or debugging a Node service.
+targets: [cursor]
+---
+
 # Node.js
 
 ## When to use

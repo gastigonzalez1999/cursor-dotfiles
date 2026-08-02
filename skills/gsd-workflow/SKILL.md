@@ -1,3 +1,10 @@
+---
+name: gsd-workflow
+description: >-
+  Break large work into phases with clear outcomes and execute them one at a time. Use when a task is too big for one pass and needs milestone structure.
+targets: [cursor]
+---
+
 # Phased delivery workflow (milestones and execution)
 
 ## When to use

@@ -1,3 +1,10 @@
+---
+name: tdd
+description: >-
+  Implement or change behavior test-first via red-green-refactor. Use when regressions are costly or the design is still unclear.
+targets: [cursor]
+---
+
 # Test-driven development
 
 ## When to use

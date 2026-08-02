@@ -1,3 +1,10 @@
+---
+name: code-review-pass
+description: >-
+  Review a PR, diff, or recent commit before merge — correctness, security, tests, and regressions. Use when asked to review changes or to self-review a branch before opening a PR.
+targets: [cursor]
+---
+
 # Code review pass
 
 ## When to use
