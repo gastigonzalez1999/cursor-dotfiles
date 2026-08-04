@@ -3,6 +3,7 @@ name: pre-edit-context
 description: >-
   Build enough repository context to edit safely before changing unfamiliar code.
   Use when the task touches unknown modules, large files, or cross-cutting behavior.
+targets: [claude, cursor, codex]
 ---
 
 # Pre-edit context

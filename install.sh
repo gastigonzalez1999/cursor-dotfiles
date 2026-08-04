@@ -100,4 +100,21 @@ else
   fi
 fi
 
+# Slash commands are user-global only — Cursor reads them from ~/.cursor/commands
+# regardless of which project is open, so a per-project install has nowhere to go.
+if [[ "${GLOBAL}" -eq 1 ]] && [[ -d "${SCRIPT_DIR}/commands" ]]; then
+  DEST_COMMANDS="${HOME}/.cursor/commands"
+  mkdir -p "${DEST_COMMANDS}"
+  for f in "${SCRIPT_DIR}"/commands/*.md; do
+    [[ -e "$f" ]] || continue
+    base="$(basename "$f")"
+    if [[ -e "${DEST_COMMANDS}/${base}" ]] && [[ "${FORCE}" -eq 0 ]]; then
+      echo "  [skip] command ${base} (exists; --force to overwrite)"
+      continue
+    fi
+    cp "$f" "${DEST_COMMANDS}/"
+    echo "  [ok] command ${base}"
+  done
+fi
+
 echo "Done. Skills: ${DEST_SKILLS} | Rules: ${DEST_RULES}"

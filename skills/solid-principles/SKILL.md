@@ -1,3 +1,10 @@
+---
+name: solid-principles
+description: >-
+  Review or refactor object-oriented modules against SOLID for maintainability and safe extension. Use when a class is hard to change or a design review calls for it.
+targets: [claude, cursor, codex]
+---
+
 # SOLID principles
 
 ## When to use

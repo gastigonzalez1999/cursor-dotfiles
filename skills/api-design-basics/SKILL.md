@@ -1,3 +1,10 @@
+---
+name: api-design-basics
+description: >-
+  Design or change HTTP/JSON APIs, webhooks, and client-server contracts — resource naming, error shapes, pagination, versioning, idempotency. Use when adding or changing an endpoint, or debating an API contract.
+targets: [claude, cursor, codex]
+---
+
 # API design basics
 
 ## When to use

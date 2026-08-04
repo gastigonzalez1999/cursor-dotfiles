@@ -1,3 +1,10 @@
+---
+name: prisma
+description: >-
+  Schema design, migrations, queries, and Prisma Client usage in TypeScript/Node. Use when changing schema.prisma, writing queries, or debugging a migration.
+targets: [cursor]
+---
+
 # Prisma
 
 ## When to use

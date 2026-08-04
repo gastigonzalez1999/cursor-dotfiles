@@ -1,3 +1,10 @@
+---
+name: golang
+description: >-
+  Write or review Go services, CLIs, and libraries — modules, interfaces, concurrency, error handling, performance. Use when working in a Go codebase.
+targets: [cursor]
+---
+
 # Go
 
 ## When to use

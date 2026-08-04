@@ -3,6 +3,7 @@ name: frontend-design
 description: >-
   Frontend UI: pages, apps, components, polished non-generic design. Use when
   building or redesigning web UI with distinctive aesthetics.
+targets: [cursor]
 ---
 
 This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.

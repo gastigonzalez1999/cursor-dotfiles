@@ -1,3 +1,10 @@
+---
+name: improve-codebase-architecture
+description: >-
+  Audit a codebase for structural improvement opportunities before a large refactor. Use when planning a refactor and you need to know where the real problems are.
+targets: [cursor]
+---
+
 # Improve codebase architecture
 
 ## When to use

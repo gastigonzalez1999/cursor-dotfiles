@@ -1,3 +1,10 @@
+---
+name: typescript
+description: >-
+  Typing strategies, refactors, compiler options, and library authoring in TypeScript. Use when wrestling with types or configuring tsconfig.
+targets: [cursor]
+---
+
 # TypeScript
 
 ## When to use

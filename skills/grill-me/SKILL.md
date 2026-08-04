@@ -1,3 +1,10 @@
+---
+name: grill-me
+description: >-
+  Quiz the user on their own codebase to prepare for interviews or deepen understanding. Use when the user asks to be grilled or interviewed about their code.
+targets: [cursor]
+---
+
 # Grill me (code interview)
 
 ## When to use

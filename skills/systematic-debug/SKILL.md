@@ -1,3 +1,10 @@
+---
+name: systematic-debug
+description: >-
+  Debug methodically when a test fails or behavior contradicts expectations — reproduce, isolate, form and test hypotheses. Use instead of guessing at fixes.
+targets: [cursor]
+---
+
 # Systematic debug
 
 ## When to use

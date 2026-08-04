@@ -1,3 +1,10 @@
+---
+name: safe-refactor
+description: >-
+  Restructure code without changing behavior — characterize first, then move in small verified steps. Use when refactoring code with weak test coverage.
+targets: [cursor]
+---
+
 # Safe refactor
 
 ## When to use

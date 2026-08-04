@@ -1,3 +1,10 @@
+---
+name: docker
+description: >-
+  Write or debug Dockerfiles, Compose files, and container runtime behavior — layer caching, multi-stage builds, healthchecks, networking. Use when containerizing a service or when a container misbehaves.
+targets: [cursor]
+---
+
 # Docker
 
 ## When to use
