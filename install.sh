@@ -42,16 +42,19 @@ resolve_target() {
 if [[ "${GLOBAL}" -eq 1 ]]; then
   DEST_SKILLS="${HOME}/.cursor/skills"
   DEST_RULES="${HOME}/.cursor/rules"
+  DEST_AGENTS="${HOME}/.cursor/agents"
   echo "Installing cursor-dotfiles globally into: ${DEST_SKILLS}"
 else
   DEST="$(resolve_target)"
   DEST_SKILLS="${DEST}/.cursor/skills"
   DEST_RULES="${DEST}/.cursor/rules"
+  DEST_AGENTS="${DEST}/.cursor/agents"
   echo "Installing cursor-dotfiles into: ${DEST}"
 fi
 
 SKILLS_SRC="${SCRIPT_DIR}/skills"
 RULES_SRC="${SCRIPT_DIR}/rules"
+AGENTS_SRC="${SCRIPT_DIR}/agents"
 
 mkdir -p "${DEST_SKILLS}"
 mkdir -p "${DEST_RULES}"
@@ -117,4 +120,23 @@ if [[ "${GLOBAL}" -eq 1 ]] && [[ -d "${SCRIPT_DIR}/commands" ]]; then
   done
 fi
 
+# Subagents. A parent dispatches these via Task, so they follow the same
+# global-or-project placement as skills and rules.
+if [[ -d "${AGENTS_SRC}" ]] && compgen -G "${AGENTS_SRC}/*.md" >/dev/null; then
+  mkdir -p "${DEST_AGENTS}"
+  for f in "${AGENTS_SRC}"/*.md; do
+    [[ -f "$f" ]] || continue
+    base="$(basename "$f")"
+    if [[ -f "${DEST_AGENTS}/${base}" ]] && [[ "${FORCE}" -eq 0 ]]; then
+      echo "  [skip] agent: ${base} (exists, use --force to replace)"
+      skipped=$((skipped + 1))
+      continue
+    fi
+    cp "$f" "${DEST_AGENTS}/"
+    echo "  [ok]   agent: ${base}"
+    installed=$((installed + 1))
+  done
+fi
+
 echo "Done. Skills: ${DEST_SKILLS} | Rules: ${DEST_RULES}"
+[[ -d "${DEST_AGENTS}" ]] && echo "      Agents: ${DEST_AGENTS}"
