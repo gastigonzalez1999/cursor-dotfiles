@@ -1,0 +1,31 @@
+name: checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  in-sync:
+    name: Generated from the current agent-dotfiles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The generator lives in the source repo, not here. Checked out beside
+      # this one so its --check can compare what it *would* produce against what
+      # this repo actually contains.
+      - uses: actions/checkout@v4
+        with:
+          repository: gastigonzalez1999/agent-dotfiles
+          path: .agent-dotfiles
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Fails when this repo is behind agent-dotfiles' main — a skill added,
+      # renamed or retargeted there and never synced here. The fix is always the
+      # same: run the sync in agent-dotfiles and commit the result here.
+      - name: This repo matches what the sync would produce
+        run: node .agent-dotfiles/scripts/sync-to-cursor.mjs . --check
