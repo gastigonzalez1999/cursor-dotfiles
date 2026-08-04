@@ -20,15 +20,18 @@ $ErrorActionPreference = "Stop"
 $ToolkitRoot = $PSScriptRoot
 $SkillsSrc = Join-Path $ToolkitRoot "skills"
 $RulesSrc = Join-Path $ToolkitRoot "rules"
+$AgentsSrc = Join-Path $ToolkitRoot "agents"
 
 if ($Global) {
   $destSkills = Join-Path $env:USERPROFILE ".cursor\skills"
   $destRules = Join-Path $env:USERPROFILE ".cursor\rules"
+  $destAgents = Join-Path $env:USERPROFILE ".cursor\agents"
   Write-Host "Installing cursor-dotfiles globally into: $destSkills"
 } else {
   $resolved = (Resolve-Path -LiteralPath $ProjectPath).Path
   $destSkills = Join-Path $resolved ".cursor\skills"
   $destRules = Join-Path $resolved ".cursor\rules"
+  $destAgents = Join-Path $resolved ".cursor\agents"
   Write-Host "Installing cursor-dotfiles into: $resolved"
 }
 
@@ -83,4 +86,23 @@ if ($Global -and (Test-Path -LiteralPath $commandsSrc)) {
   }
 }
 
+# Subagents. A parent dispatches these via Task, so they follow the same
+# global-or-project placement as skills and rules.
+if (Test-Path -LiteralPath $AgentsSrc) {
+  $agentFiles = Get-ChildItem -LiteralPath $AgentsSrc -Filter "*.md" -File -ErrorAction SilentlyContinue
+  if ($agentFiles) {
+    New-Item -ItemType Directory -Force -Path $destAgents | Out-Null
+    $agentFiles | ForEach-Object {
+      $dest = Join-Path $destAgents $_.Name
+      if ((Test-Path -LiteralPath $dest) -and -not $Force) {
+        Write-Host "  [skip] agent:   $($_.Name) (exists, use -Force to replace)"
+        return
+      }
+      Copy-Item -LiteralPath $_.FullName -Destination $dest -Force
+      Write-Host "  [ok]   agent:   $($_.Name)"
+    }
+  }
+}
+
 Write-Host "Done. Skills: $destSkills | Rules: $destRules"
+if (Test-Path -LiteralPath $destAgents) { Write-Host "      Agents: $destAgents" }
