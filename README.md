@@ -29,8 +29,8 @@ Portable **Cursor rules** and **skills** you can copy into any repo. Works on **
 
 - **63 skills** under `.cursor/skills/<slug>/SKILL.md`. The full routing
   table, with each skill's trigger, is in `rules/toolkit-skills-index.mdc`.
-- **10 rules** under `.cursor/rules/toolkit-*.mdc`:
-  `agent-execution`, `backend-review`, `code-change-discipline`, `communication-and-citations`, `conversation-context`, `investigate-before-editing`, `karpathy-guidelines`, `loop`, `secrets-and-safety`, `skills-index`.
+- **11 rules** under `.cursor/rules/toolkit-*.mdc`:
+  `agent-execution`, `backend-review`, `code-change-discipline`, `communication-and-citations`, `conversation-context`, `gentle-ai`, `investigate-before-editing`, `karpathy-guidelines`, `loop`, `secrets-and-safety`, `skills-index`.
 <!-- generated:end inventory -->
 
 Rules use the `toolkit-` prefix so they do not silently overwrite unrelated files. Skills merge by folder name; existing skill folders are **skipped** unless you force.
