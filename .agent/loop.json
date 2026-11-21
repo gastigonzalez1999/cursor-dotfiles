@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/gastigonzalez1999/agent-dotfiles/main/loop/schema.json",
+  "gates": {
+    "fast": [
+      {
+        "name": "in-sync",
+        "cmd": "node ../agent-dotfiles/scripts/sync-to-cursor.mjs . --check"
+      }
+    ],
+    "test": [
+      {
+        "name": "in-sync",
+        "cmd": "node ../agent-dotfiles/scripts/sync-to-cursor.mjs . --check"
+      },
+      {
+        "name": "loop-unit",
+        "cmd": "node --test loop/test/*.test.mjs"
+      }
+    ],
+    "full": [
+      {
+        "name": "in-sync",
+        "cmd": "node ../agent-dotfiles/scripts/sync-to-cursor.mjs . --check"
+      },
+      {
+        "name": "loop-unit",
+        "cmd": "node --test loop/test/*.test.mjs"
+      }
+    ]
+  },
+  "budget": {
+    "maxIterations": 5,
+    "gateTimeoutSec": 600
+  },
+  "enforce": {
+    "stopGate": "full",
+    "postEditGate": false,
+    "retro": "off"
+  },
+  "guard": {
+    "suppressions": true
+  }
+}

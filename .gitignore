@@ -11,3 +11,6 @@ desktop.ini
 # Logs and temp
 *.log
 *.tmp
+
+# agent loop run artifacts (the contract itself is committed)
+.agent/.loop-*

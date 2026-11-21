@@ -75,3 +75,16 @@ Test against a scratch directory rather than a real project:
 - Define verifiable success criteria and check them before finishing.
 - When corrected, re-read the user's message and confirm before proceeding.
 - When stuck, summarize attempts and ask for guidance.
+
+<!-- loop:begin -->
+## Verification loop
+
+This repository declares how to verify work in `.agent/loop.json`. `loop` is
+`node ~/.claude/loop/loop.mjs`, or `npx -y github:gastigonzalez1999/agent-dotfiles loop`
+on a machine without it.
+
+- After an edit: `loop fast`. Before saying the work is done: `loop full`, and it must exit 0.
+- A failing `guard` check means a line you added breaks a project rule. Fix the cause; never suppress, reword or move the line to get past it.
+- When the user corrects a mistake, propose a `guard.rules` entry in `.agent/loop.json` that would have caught it, instead of adding prose here.
+- If `features` are declared, run `loop prove` for the ones you touched and cite `.agent/.loop-proof/` as evidence.
+<!-- loop:end -->
